@@ -1,0 +1,12 @@
+name = "Medial"
+license = "MIT"
+licenselink = "https://github.com/schuttejoe/medial-theme/blob/master/LICENSE"
+description = "Hugo theme used for my website"
+homepage = "https://github.com/schuttejoe/medial-theme"
+tags = ["blog", "personal", "responsive"]
+features = ["responsive"]
+min_version = "0.24.1"
+
+[author]
+  name = "Joe Schutte"
+  homepage = "https://github.com/schuttejoe"

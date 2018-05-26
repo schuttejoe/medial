@@ -1,0 +1,10 @@
+<div class="projectrow">
+    <div class="leftbar">
+        <a href="{{ .RelPermalink }}"><img src="{{ $.Site.BaseURL }}{{ .Params.preview }}" width="400" height="225"></a>
+    </div>
+    <div class="rightbar">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <h4>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006")}}</h4>
+        <h5>{{ .Description }}</h5>
+    </div>
+</div>

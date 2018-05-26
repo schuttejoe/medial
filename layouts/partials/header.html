@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    <head>
+        {{ partial "head-open" . }}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ .Title }}</title>
+        {{ if .Site.Params.favicon }}
+        <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+        {{ end }}
+        {{ partial "css" . }} {{ partial "js" . }} {{ .Hugo.Generator }}
+    </head>
+
+    {{ if .Site.Params.MathJax | default true }}
+    <!-- adds MathJax support -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    {{ end }}
+    {{ partial "head-close" . }}
+
+    <body>
+        {{ partial "body-open" . }}
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                {{ if .Site.Menus.main }}
+                    <ul class="nav navbar-nav">
+                        {{ range sort .Site.Menus.main }}
+                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+
+                {{ if .Site.Menus.icon }}
+                    <ul class="nav navbar-nav navbar-right">
+                        {{ range sort .Site.Menus.icon }}
+                            <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+
+            </div>
+
+        </nav>

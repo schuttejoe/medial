@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+
+<main>
+
+    <h2>{{ .Title }}</h2>
+
+    {{ range .Data.Pages }} {{ partial "list-item" . }} {{ end }}
+
+</main>
+
+{{ partial "footer" . }}
